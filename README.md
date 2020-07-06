@@ -1,7 +1,16 @@
-Project : Open OS
+**Project : Open OS**
 - Open OS에서의 지인소프트 프레임웍을 기반으로 하는 PC 지킴이 프로젝트
 
 
-Project Information
+**Project Information**
 - 현재 Open OS에서의 지인소프트 프레임웍을 구축중이며, 이 프레임웍에서 운영되는 PC 지킴이 솔루션을 진행.
 - TBD
+
+
+
+프로젝트 개요
+프로젝트 용도 설명
+프로젝트 시작(사용) 방법
+프로젝트 개발 방법
+프로젝트 라이센스 정보
+프로젝트 참여 방법
