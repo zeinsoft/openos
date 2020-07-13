@@ -1,0 +1,13 @@
+1. automountd 제거
+
+2. KISA 항목 : U-26
+
+3. 점검 방법
+
+# dpkg -l | grep autofs 
+
+- default로는 설치되어 있지 않으며, apt-get install autofs 로 설치할수 있다
+   
+4. 조치 방법
+
+# apt-get purge autofs -y

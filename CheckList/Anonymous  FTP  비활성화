@@ -1,0 +1,13 @@
+1. Anonymous  FTP  비활성화
+
+2. KISA 항목 : U-20
+
+3. 점검 방법
+
+- /etc/passwd 에 ftp 계정 점검 
+# cat /etc/passwd | grep "ftp"
+
+4. 조치 방법
+
+- ftp 계정 삭제 
+# sudo deluser "ftp"
