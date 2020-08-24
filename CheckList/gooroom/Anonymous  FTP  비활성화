@@ -11,3 +11,5 @@
 
 - ftp 계정 삭제 
 # sudo deluser "ftp"
+
+5. Anonymous 외 다른 ftp도 조사해야함
