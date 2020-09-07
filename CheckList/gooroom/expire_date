@@ -1,0 +1,10 @@
+chage 시스템 명령으로 해당 계정의 만료 설정 
+
+> chage -M 만료될날짜수 
+# chage -M 30 userid  : 30일 이후에 만료 
+
+# MC등록 : chage -M 30 $USER    
+조치 안됨
+
+> 취약으로 변경 
+# chage -M 99999 userid
