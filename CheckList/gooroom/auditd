@@ -1,0 +1,8 @@
+MC적용
+
+시스템 성능 측정을 위한 auditd 서비스 설치 및 활성화 
+>  auditd 설치 
+# sudo apt-get install  -y auditd 
+
+> 취약으로 전환 
+# sudo apt-get remove -y auditd
