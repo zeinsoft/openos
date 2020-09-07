@@ -1,0 +1,12 @@
+외부 USB 저장소 등의 드라이버 해지
+disable drivers like USB storage  
+
+> blacklist 작성 
+# sudo vim /etc/modprobe.d/blacklist.conf 아래 입력 및 저장
+blacklist usb-storage 
+
+- blacklist.conf 파일은 default로 없는 파일임.
+- 기존에 파일이 있다면, 추가하도록  
+
+>  취약으로 변경
+# sudo rm /etc/modprobe.d/blacklist.conf
