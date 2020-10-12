@@ -1,0 +1,6 @@
+● ssh.service
+   Loaded: masked (Reason: Unit ssh.service is masked.)
+   Active: inactive (dead) since Thu 2020-09-03 14:46:48 KST; 1 months 5 days ago
+ Main PID: 463 (code=exited, status=0/SUCCESS)
+
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
