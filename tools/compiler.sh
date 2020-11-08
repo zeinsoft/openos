@@ -1,7 +1,7 @@
 check_compiler=$(which gcc | wc -l)
 
 if [ ${check_compiler} -gt 0 ]; then
-	echo "compiler exist"
+	exit 1
 else
-	echo "compiler NOT exit"
+	exit 0
 fi
