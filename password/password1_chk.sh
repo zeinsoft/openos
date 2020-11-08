@@ -6,7 +6,6 @@ setline_exist="N"
 cat /etc/login.defs | while read oneline
 do
     passminlen=$(echo $oneline | grep PASS_MIN_LEN | expand -1 | sed -e 's/^ *//g' | tr -s ' ')
-	    echo ${oneline}
 
     length=$(echo ${passminlen} | wc -L)    
     if [ ${length} -gt 0 ]; then
@@ -15,7 +14,7 @@ do
         if [ ${remark} == '#' ];
         then
 	        commentline_exist="Y"
-            echo "1"
+            echo "commentline_exist=1"
         else
             minlen=$(echo ${passminlen}" " | cut -d ' ' -f2)
 
