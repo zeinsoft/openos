@@ -3,11 +3,6 @@ FILENAME="/etc/hosts"
 FILE_MOD_SET="-rw-------"
 FILE_MOD=600
 
-# return value
-# 0 : 정상 설절
-# 1 : 소유자가 ROOT가 아님
-# 2 : 파일 모드 설정이 잘못 되었음 644 이어야 함.
-
 function check_file() {
     local lfilename=$1
     local owner=$(stat -c "%U" ${lfilename})
