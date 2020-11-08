@@ -1,4 +1,3 @@
-# /etc/passwd
 FILE_ALLOW="/etc/cron.allow"
 FILE_DENY="/etc/cron.deny"
 FILE_MOD_SET="-rw-r--r--"
@@ -8,6 +7,7 @@ FILE_MOD=644
 function check_file() {
     local lfilename=$1
     local result
+
     if ! [ -f $lfilename ];
     then
         return 3
@@ -39,7 +39,21 @@ check_allow=$?
 check_file $FILE_DENY
 check_deny=$?
 
+
 if [ $forceApply  ]; then
-    chmod FILE_MOD $FILENAME
-    chown root $FILENAME
+    if [ check_allow -ne 0 ];
+    then
+	chmod FILE_MOD $FILE_ALLOW
+    	chown root $FILE_ALLOW
+	check_file $FILE_ALLOW
+	check_allow=$?
+    	if [ check_allow -ne 0 ];
+	then
+		exit 1
+	else
+		exit 0
+	fi
+    else
+             exit 0
+    fi
 fi
