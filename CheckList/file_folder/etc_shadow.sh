@@ -1,4 +1,3 @@
-# /etc/passwd
 FILENAME="/etc/shadow"
 FILE_MOD=400
 FILE_MOD_SET="-r--------"

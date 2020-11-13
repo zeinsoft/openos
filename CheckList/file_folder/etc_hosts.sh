@@ -33,11 +33,20 @@ then
 fi
 
 check_file $FILENAME
-returnValue=$?
 
-echo $returnValue
-
-if [ $returnValue -ne 0 && $forceApply  ]; then
-    chmod FILE_MOD $FILENAME
-    chown root $FILENAME
+if [ $? -eq 0 ];
+then
+    exit 0
+else
+    if [ $forceApply  ]; then
+        chmod $FILE_MOD $FILENAME
+        chown root $FILENAME
+        check_file $FILENAME
+        returnValue=$?
+        if [ $? -eq 0 ];
+        then    
+            exit 0
+        fi
+    fi
 fi
+exit 1

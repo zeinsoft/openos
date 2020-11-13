@@ -8,7 +8,7 @@ FILE_MOD=644
 # 1 : 소유자가 ROOT가 아님
 # 2 : 파일 모드 설정이 잘못 되었음 644 이어야 함.
 
-function check_file() {
+function check_file(){
     local lfilename=$1
     local owner=$(stat -c "%U" ${lfilename})
     local result
