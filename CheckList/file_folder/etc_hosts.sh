@@ -1,4 +1,5 @@
-# /etc/passwd
+#!/bin/bash
+
 FILENAME="/etc/hosts"
 FILE_MOD_SET="-rw-------"
 FILE_MOD=600
@@ -11,17 +12,13 @@ function check_file() {
     if [ $owner == "root" ];
     then
         local accessright=$(ls -al $lfilename | cut -d' ' -f1)
-
-        if [ $accessright != FILE_MOD_SET ]
-        then
-            # 파일 모드 설정이 잘못 되었음
+        if [ $accessright != $FILE_MOD_SET ]
+        then             # 파일 모드 설정이 잘못 되었음
             return 2
-        else    
-            # 정상 설정
+        else            # 정상 설정
             return 0
         fi
-    else
-        # 소유자가 ROOT가 아님
+    else                # 소유자가 ROOT가 아님
         return 1
     fi
 }
@@ -33,7 +30,6 @@ then
 fi
 
 check_file $FILENAME
-
 if [ $? -eq 0 ];
 then
     exit 0

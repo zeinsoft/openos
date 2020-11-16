@@ -1,3 +1,4 @@
+#!/bin/bash
 check_compiler=$(which gcc | wc -l)
 
 if [ ${check_compiler} -gt 0 ]; then

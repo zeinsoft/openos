@@ -1,3 +1,4 @@
+#!/bin/bash
 FILE_ALLOW="/etc/cron.allow"
 FILE_DENY="/etc/cron.deny"
 FILE_MOD_SET="-rw-r--r--"
@@ -39,21 +40,28 @@ check_allow=$?
 check_file $FILE_DENY
 check_deny=$?
 
+if [ check_allow -ne 0 ] || [ check_deny -ne 0 ];
+then
+    if [ $forceApply  ]; then
+        chmod FILE_MOD $FILE_ALLOW
+        chown root $FILE_ALLOW
+        chmod FILE_MOD $FILE_DENY
+        chown root $FILE_DENY
 
-if [ $forceApply  ]; then
-    if [ check_allow -ne 0 ];
-    then
-	chmod FILE_MOD $FILE_ALLOW
-    	chown root $FILE_ALLOW
-	check_file $FILE_ALLOW
-	check_allow=$?
-    	if [ check_allow -ne 0 ];
-	then
-		exit 1
-	else
-		exit 0
-	fi
+        check_file $FILE_ALLOW
+        check_allow=$?
+        check_file $FILE_DENY
+        check_deny=$?
+
+        if [ check_allow -ne 0 ] || [ check_deny -ne 0 ];
+        then
+            exit 1
+        else
+            exit 0
+        fi
     else
-             exit 0
+        exit 1
     fi
+else    
+    exit 0
 fi
