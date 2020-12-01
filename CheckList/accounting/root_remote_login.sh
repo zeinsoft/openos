@@ -1,3 +1,5 @@
+#!/bin/bash
+
 count=$(cat /etc/securetty | grep " pts/"| wc -l)
 
 # ptx/* 는 있으면 안됨
