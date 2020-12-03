@@ -40,7 +40,7 @@ check_allow=$?
 check_file $FILE_DENY
 check_deny=$?
 
-if [ check_allow -ne 0 ] || [ check_deny -ne 0 ];
+if [ $check_allow != '0' ] || [ $check_deny  != '0' ];
 then
     if [ $forceApply  ]; then
         chmod FILE_MOD $FILE_ALLOW
@@ -53,7 +53,7 @@ then
         check_file $FILE_DENY
         check_deny=$?
 
-        if [ check_allow -ne 0 ] || [ check_deny -ne 0 ];
+        if [ $check_allow != '0' ] || [ $check_deny  != '0' ];
         then
             exit 1
         else
