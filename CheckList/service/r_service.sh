@@ -1,3 +1,6 @@
+
+#!/bin/bash
+
 DIR_NAME="/etc/xinetd.d"
 
 if [ -d DIR_NAME ];
